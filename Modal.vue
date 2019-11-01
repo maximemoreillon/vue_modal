@@ -2,11 +2,15 @@
   <div
   class="modal"
   v-bind:class="{open: open}"
-  v-on:click.stop="$emit('close')"
+  v-on:click.self="$emit('close')"
   >
 
     <div class="modal_window_outer">
       <div class="modal_window_inner">
+        <span
+          v-if="close_button"
+          class="modal_close_button mdi mdi-close"
+          v-on:click.self="$emit('close')"/>
         <slot></slot>
       </div>
     </div>
@@ -18,7 +22,11 @@
 export default {
   name: 'HelloWorld',
   props: {
-    open: Boolean
+    open: Boolean,
+    close_button: {
+      type: Boolean,
+      default: true,
+    }
   }
 }
 </script>
@@ -91,7 +99,7 @@ export default {
   transition-delay: 0s;
 
   /* ADDITIONAL VISUALS */
-  padding: 15px;
+  padding: 25px;
 }
 
 .modal.open .modal_window_outer{
@@ -107,5 +115,21 @@ export default {
   opacity: 1;
   /* Delay when OPENING */
   transition-delay: 0.25s;
+}
+
+/* close button */
+.modal_close_button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  font-size: 150%;
+  font-weight: bold;
+  cursor: pointer;
+  color: #00000066;
+}
+
+.modal_close_button:hover{
+  color: #000000;
 }
 </style>
