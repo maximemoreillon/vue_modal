@@ -24,7 +24,7 @@ export default {
   props: {
     open: Boolean,
     close_button: {
-      type: Boolean,
+      type: Object,
       default: true,
     }
   }
