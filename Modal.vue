@@ -20,11 +20,11 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Modal',
   props: {
     open: Boolean,
     close_button: {
-      type: Object,
+      type: Boolean,
       default: true,
     }
   }
