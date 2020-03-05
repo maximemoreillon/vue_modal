@@ -2,15 +2,18 @@
   <div
   class="modal"
   v-bind:class="{open: open}"
-  v-on:click.self="$emit('close')"
-  >
+  v-on:click.self="$emit('close')">
 
     <div class="modal_window_outer">
       <div class="modal_window_inner">
-        <span
+
+        <!-- CLose button -->
+        <close-icon
           v-if="close_button"
-          class="modal_close_button mdi mdi-close"
+          class="modal_close_button"
           v-on:click.self="$emit('close')"/>
+
+        <!-- The content of the modal goes here -->
         <slot></slot>
       </div>
     </div>
@@ -19,8 +22,14 @@
 </template>
 
 <script>
+import CloseIcon from 'vue-material-design-icons/Close.vue';
+
+
 export default {
   name: 'Modal',
+  components: {
+    CloseIcon
+  },
   props: {
     open: Boolean,
     close_button: {

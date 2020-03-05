@@ -1,11 +1,11 @@
 {
   "name": "@moreillon/vue_modal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/Modal.umd.js",
   "unpkg": "dist/Modal.umd.min.js",
   "module": "dist/Modal.esm.js",
   "browser": {
-    "./sfc": "src/AppTemplate.vue"
+    "./sfc": "src/Modal.vue"
   },
   "scripts": {
     "build": "rm -r dist && npm run build:umd & npm run build:es & npm run build:unpkg",
@@ -20,5 +20,8 @@
     "rollup-plugin-vue": "^5.0.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "vue-material-design-icons": "^4.4.0"
   }
 }
