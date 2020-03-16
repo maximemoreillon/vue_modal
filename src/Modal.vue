@@ -11,7 +11,8 @@
         <close-icon
           v-if="close_button"
           class="modal_close_button"
-          v-on:click.self="$emit('close')"/>
+          v-bind:size="48"
+          v-on:click="$emit('close')"/>
 
         <!-- The content of the modal goes here -->
         <slot></slot>
