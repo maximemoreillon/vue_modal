@@ -6,6 +6,7 @@ publishing:
   tags:
     - moreillon
   script:
+    - npm install
     - npm run build
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
     - npm publish
