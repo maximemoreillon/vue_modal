@@ -130,9 +130,8 @@ export default {
 /* close button */
 .modal_close_button{
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 8px;
+  top: 0.2em;
+  right: 0.2em;
   font-size: 150%;
   font-weight: bold;
   cursor: pointer;
