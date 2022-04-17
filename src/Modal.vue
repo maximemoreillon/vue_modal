@@ -1,8 +1,8 @@
 <template>
   <div
-  class="modal"
-  v-bind:class="{open: open}"
-  v-on:click.self="$emit('close')">
+    class="modal"
+    :class="{open}"
+    @click.self="$emit('close')" >
 
     <div class="modal_window_outer">
       <div class="modal_window_inner">
@@ -11,11 +11,11 @@
         <close-icon
           v-if="close_button"
           class="modal_close_button"
-          v-bind:size="48"
-          v-on:click="$emit('close')"/>
+          :size="48"
+          @click="$emit('close')" />
 
         <!-- The content of the modal goes here -->
-        <slot></slot>
+        <slot />
       </div>
     </div>
 
@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import CloseIcon from 'vue-material-design-icons/Close.vue';
 
+import CloseIcon from 'vue-material-design-icons/Close.vue'
 
 export default {
   name: 'Modal',
@@ -41,7 +41,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .modal{
   /* poisitioning and sizing of background*/

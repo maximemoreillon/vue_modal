@@ -1,3 +1,10 @@
+# Vue Modal
+
+This is a modal component for Vue.js.
+
+## Usage
+
+```
 <template>
   <div>
 
@@ -21,7 +28,7 @@
 </template>
 
 <script>
-import Modal from '@/Modal.vue'
+import Modal from '@moreillon/vue_modal'
 
 export default {
   name: 'app',
@@ -35,3 +42,6 @@ export default {
   }
 }
 </script>
+
+
+```
